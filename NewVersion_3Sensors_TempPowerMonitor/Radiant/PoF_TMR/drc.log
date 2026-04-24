@@ -1,4 +1,0 @@
-DRC: Design Rule Check Radiant Software (64-bit) 2024.2.0.3.0
-Wed Feb 11 15:15:42 2026
-
-WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.

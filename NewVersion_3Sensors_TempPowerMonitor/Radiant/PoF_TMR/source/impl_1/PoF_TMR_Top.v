@@ -9,9 +9,9 @@ module PoF_TMR_Top(
     //PCB Onboard oscillator 12MHz.
 	input wire iClk_12MHz,
 	
-    //Upload UARTx2.
-    output wire oUPLD_TxD2,
-    output wire oUPLD_TxD3,
+    //Data Upload and Command Download.
+    output wire oData_TxD,
+    input wire iCmd_RxD,
 
     //AD7988 SPI-Compatible Interface.
 	output wire oSPI_SDI,
@@ -25,6 +25,7 @@ module PoF_TMR_Top(
     //TMP117 I2C Interface.
     output wire oTMP117_SCL,
     inout wire ioTMP117_SDA,
+    input wire iTMP117_ALERT,
 
     //Debug LED*3.
 	output wire oLED0, //Sample AD7988 and write data into FIFO.
@@ -72,17 +73,26 @@ my_HSOSC(
 //When PLL.OUTCORE or PLL.OUTGLOBAL is used, the input IO at site 'PR13B' can only drive PLL.REFERENCECLK due to architecture constraint. 
 //When PLL is utilized in the design, the I/O site 'PR13B' can only be used exclusively as a PLL clock input. 
 //If PLL uses an internal clock, the I/O site 'PR13B' can be used as an output.
-wire rst_n;
+wire rst_short_n;
 wire clk_48MHz_Global;
 wire clk_48MHz_Fabric;
 ZPLL ic_pll(
 	//.ref_clk_i(clk_48MHz), 
 	.ref_clk_i(iClk_12MHz), //External on board oscillator.
 	.rst_n_i(1'b1), 
-	.lock_o(rst_n), 
+	.lock_o(rst_short_n), 
 	.outcore_o(clk_48MHz_Fabric), 
 	.outglobal_o(clk_48MHz_Global)
 );
+//long reset.
+reg rst_n;
+reg [31:0] cntRst;
+always @(posedge clk_48MHz_Global or negedge rst_short_n) 
+if(!rst_short_n) begin rst_n<=0; cntRst<=0; end
+else begin 
+    cntRst<=(cntRst==32'hFFFFF0)?(cntRst):(cntRst+1);
+    rst_n<=(cntRst==32'hFFFFF0)?(1):(0);
+end
 
 /////////////////////////////////////////////////////////
 //Read speed must be faster than Write speed to avoid overflow.
@@ -133,7 +143,7 @@ ZUART_Adapter myUART(
 	.iEn(1'b1),
 
     //UART.
-    .oUART_TxD(oUPLD_TxD3),
+    .oUART_TxD(oData_TxD),
     //Working LED indicator.
     .oLED(oLED1),
 
@@ -146,7 +156,6 @@ ZUART_Adapter myUART(
     .iTempData(Temperature_Latest)
 );
 
-assign oUPLD_TxD2=oUPLD_TxD3;
 //////////////////////////////////////////////////////////////////////
 
 //TMP117 Temperature Sensor.

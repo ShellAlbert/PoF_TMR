@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="F:/MyJob/PoF_TMR_A1/Radiant/PoF_TMR/promote.xml" version="Diamond (64-bit) 2024.2.0.3.0" date="Wed Feb 11 15:24:46 2026" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="Z:/MyManjaro/HDisk/MyWork/PoF_TMR_A1/Radiant/PoF_TMR/promote.xml" version="Diamond (64-bit) 2025.2.0.48.0" date="Thu Apr 23 10:07:23 2026" vendor="Lattice Semiconductor Corporation" >
+  <msg mid="35901010" type="Error" internal="true" />
+  <msg mid="2043010" type="Error" internal="true" />
   <msg mid="35901328" type="Info" internal="true" />
-  <msg mid="2043310" type="Info" internal="true" />
-  <msg mid="2043707" type="Warning" internal="true" />
-  <msg mid="2044435" type="Warning" internal="true" />
+  <msg mid="35901128" type="Warning" internal="true" />
+  <msg mid="35931002" type="Warning" internal="true" />
   <msg mid="2043063" type="Warning" internal="true" />
   <msg mid="35901325" type="Warning" internal="true" />
-  <msg mid="2043330" type="Warning" internal="true" />
+  <msg mid="35911012" type="Info" internal="true" />
+  <msg mid="35911026" type="Warning" internal="true" />
+  <msg mid="2044320" type="Info" internal="true" />
+  <msg mid="35911015" type="Info" internal="true" />
+  <msg mid="2043310" type="Info" internal="true" />
+  <msg mid="35901411" type="Warning" internal="true" />
+  <msg mid="2044561" type="Info" internal="true" />
+  <msg mid="35901220" type="Warning" internal="true" />
   <msg mid="35901209" type="Warning" internal="true" />
+  <msg mid="2043330" type="Warning" internal="true" />
+  <msg mid="35901206" type="Warning" internal="true" />
   <msg mid="2043138" type="Error" internal="true" />
   <msg mid="35921504" type="Info" internal="true" />
-  <msg mid="35931002" type="Warning" internal="true" />
+  <msg mid="2043707" type="Warning" internal="true" />
+  <msg mid="2044435" type="Warning" internal="true" />
   <msg mid="2043072" type="Error" internal="true" />
-  <msg mid="35901220" type="Warning" internal="true" />
-  <msg mid="35901128" type="Warning" internal="true" />
-  <msg mid="2043010" type="Error" internal="true" />
   <msg mid="2043137" type="Error" internal="true" />
-  <msg mid="2044320" type="Info" internal="true" />
   <msg mid="2043328" type="Info" internal="true" />
   <msg mid="2043706" type="Warning" internal="true" />
-  <msg mid="2044561" type="Info" internal="true" />
   <msg mid="2043195" type="Error" internal="true" />
   <msg mid="2043018" type="Info" internal="true" />
-  <msg mid="35901010" type="Error" internal="true" />
   <msg mid="2044285" type="Error" internal="true" />
   <msg mid="2044344" type="Error" internal="true" />
   <msg mid="2043385" type="Error" internal="true" />
@@ -40,4 +45,5 @@
   <msg mid="2043988" type="Warning" internal="true" />
   <msg mid="2044523" type="Error" internal="true" />
   <msg mid="2043362" type="Warning" internal="true" />
+  <msg mid="2043411" type="Warning" internal="true" />
 </userSetting>

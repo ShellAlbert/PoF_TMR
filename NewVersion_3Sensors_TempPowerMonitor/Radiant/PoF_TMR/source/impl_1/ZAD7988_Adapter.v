@@ -44,18 +44,18 @@ ZAD7988_Controller u1_ad7988(
 );
 
 //AD7988-1. Maximum Throughput Rate:100KHz.
-//48MHz/100KHz=480.
+//48MHz/100KHz/2=240.
 reg [15:0] cnt_100KHz;
 always @(posedge iClk or negedge iRstN) 
 if(!iRstN) begin
     cnt_100KHz<=0; o100KHz_Tick<=0; 
 end
 else begin
-    cnt_100KHz<=(iEn)?((cnt_100KHz==480-1)?(0):(cnt_100KHz+1)):(0);
-    o100KHz_Tick<=(iEn)?((cnt_100KHz==480-1)?(~o100KHz_Tick):(o100KHz_Tick)):(0);
+    cnt_100KHz<=(iEn)?((cnt_100KHz==240-1)?(0):(cnt_100KHz+1)):(0);
+    o100KHz_Tick<=(iEn)?((cnt_100KHz==240-1)?(~o100KHz_Tick):(o100KHz_Tick)):(0);
 end
 wire tick_100KHz;
-assign tick_100KHz=(cnt_100KHz==480-1)?(1):(0);
+assign tick_100KHz=(cnt_100KHz==240-1)?(1):(0);
 
 /////////////////////////////////////////////////
 //Driven by step_i.

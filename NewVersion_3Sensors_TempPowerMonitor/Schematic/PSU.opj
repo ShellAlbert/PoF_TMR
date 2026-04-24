@@ -1,6 +1,6 @@
 (ExpressProject "PSU"
   (ProjectVersion "19981106")
-  (SoftwareVersion "22.1 P001 (4063652)  [10/6/2022]-[03/02/26]")
+  (SoftwareVersion "25.1 S020 (4396590)  [2/5/2026]-[04/24/26]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -54,7 +54,6 @@
     ("Allegro Backannotation View Output" "FALSE")
     ("Allegro Setup Output Warnings" "FALSE")
     (Backannotation_TAB "0")
-    (Board_sim_option "VHDL_flow")
     (ANNOTATE_Scope "1")
     (ANNOTATE_Mode "1")
     (ANNOTATE_Action "0")
@@ -70,7 +69,8 @@
     (Annotate_type "Default")
     (width_pages "100")
     (width_start "80")
-    (width_End "80"))
+    (width_End "80")
+    (Board_sim_option "VHDL_flow"))
   (Folder "Layout")
   (Folder "Outputs"
     (File ".\psu.bom"
@@ -210,15 +210,15 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" "f:\myjob\pof_tmr_a1\schematic\psu.dsn")
+      (Path "Design Resources" ".\psu.dsn")
+      (Path "Design Resources" ".\psu.dsn" "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Path "Logs")
-      (Select "Design Resources" "f:\myjob\pof_tmr_a1\schematic\psu.dsn"))
+      (Path "Logs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 735"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 605"))
       (Tab 0)))
   (MPSSessionName "SNIPER")
   (LastUsedLibraryBrowseDirectory "C:\Cadence\SPB_22.1\tools\capture\library")

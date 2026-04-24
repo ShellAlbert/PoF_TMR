@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.2" radiant="2024.2.0.3.0" title="EFS" device="LIFCL-17-7SG72I" performance_grade="7_High-Performance_1.0V" family_int="je5d00" device_int="je5d15" package_int="QFN72" operation_int="IND" speed_int="10" default_implementation="impl_1">
+    <Options/>
+    <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
+        <Options/>
+        <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="EFS1.sty"/>
+</RadiantProject>

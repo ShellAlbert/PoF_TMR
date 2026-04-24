@@ -45,6 +45,14 @@ reg [31:0] cnt_led;
 //55 High-Byte Low-Byte Temperature-Byte.
 //0.0078125=2^(-7)
 
+//if MSB is 0, positive. 
+//0000_1100_1000_0000 ; 3200*0.0078125=25
+//>>7  0000_1100_1; 25
+//
+//0011_0010_0000_0000  ; 12800*0.0078125=100
+//>>7 0011_0010_0 ;  100
+
+//if MSB is 1, negative.
 //expand 1 bit for symbol.
 reg unsigned [15:0] SensorData; 
 reg symbol_bit;
@@ -92,8 +100,8 @@ else begin
             begin
                 step_i<=0;
                 /////////////////////////////////////////////////////////////////
-                cnt_led<=(cnt_led==32'hF00-1)?(0):(cnt_led+1);
-                oLED<=(cnt_led==32'hF00-1)?(~oLED):(oLED);
+                cnt_led<=(cnt_led==32'hFFFFF-1)?(0):(cnt_led+1);
+                oLED<=(cnt_led==32'hFFFFF-1)?(~oLED):(oLED);
             end
         default:
                 begin step_i<=0; end

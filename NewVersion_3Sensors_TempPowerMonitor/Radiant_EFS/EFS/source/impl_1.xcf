@@ -1,31 +1,24 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <!DOCTYPE		ispXCF	SYSTEM	"IspXCF.dtd" >
-<ispXCF version="R2025.2">
+<ispXCF version="R2024.2">
 	<Comment></Comment>
 	<Chain>
-		<Comm>Slave SPI</Comm>
+		<Comm>JTAG</Comm>
 		<Device>
 			<SelectedProg value="TRUE"/>
 			<Pos>1</Pos>
-			<Vendor>Lattice</Vendor>
-			<Family>iCE40 UltraPlus</Family>
-			<Name>iCE40UP5K</Name>
-			<IDCode>0x11200639</IDCode>
-			<Package>All</Package>
-			<PON>iCE40UP5K</PON>
+			<Family>Generic JTAG Device</Family>
+			<Name>JTAG-NOP</Name>
 			<Bypass>
-				<InstrLen>8</InstrLen>
-				<InstrVal>11111111</InstrVal>
+				<InstrLen>0</InstrLen>
+				<InstrVal></InstrVal>
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>../../impl_1/PoF_TMR_impl_1.bin</File>
-			<FileTime>04/01/26 00:12:14</FileTime>
-			<MemoryType>Compressed Random Access Memory (CRAM)</MemoryType>
-			<Operation>Fast Configuration</Operation>
+			<MemoryType>Generic Configuration Memory</MemoryType>
+			<Operation>Bypass</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
-				<IOState>HighZ</IOState>
 				<SVFProcessor>SVF Processor</SVFProcessor>
 				<AccessMode>Direct Programming</AccessMode>
 			</Option>
@@ -37,13 +30,12 @@
 		<OperationOverride>No Override</OperationOverride>
 		<StartTAP>TLR</StartTAP>
 		<EndTAP>TLR</EndTAP>
-		<DisableCheckBoard value="TRUE"/>
 		<VerifyUsercode value="FALSE"/>
 		<TCKDelay>6</TCKDelay>
 	</ProjectOptions>
 	<CableOptions>
 		<CableName>USB2</CableName>
 		<PortAdd>FTUSB-0</PortAdd>
-		<USBID>Lattice HW-USBN-2B Ch A Location 0361 Serial VER00001A</USBID>
+		<USBID>Lattice HW-USBN-2B Ch A Location 0171 Serial VER00001A</USBID>
 	</CableOptions>
 </ispXCF>
